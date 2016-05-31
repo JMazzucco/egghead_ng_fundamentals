@@ -26,7 +26,6 @@ angular.module('Eggly', [])
 
 	$scope.setCurrentCategory = function(category){
 		$scope.currentCategory = category;
-		console.log("aya");
 	};
 
 });
