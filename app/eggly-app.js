@@ -20,7 +20,12 @@ angular.module('Eggly', [])
 		{id:6, title: "Wimp", category: "Humor"},
 		{id:7, title: "Dump", category: "Humor"}
 
-
 	];
+
+	$scope.currentCategory = null;
+
+	$scope.setCurrentCatgeory = function(category){
+		$scope.currentCategory = category;
+	};
 
 });
