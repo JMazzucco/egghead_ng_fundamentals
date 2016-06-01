@@ -39,21 +39,23 @@
 
 				<!-- Creating -->
 				<div ng-show="shouldShowCreating()">
-					<button type="button" class="btn btn-link" ng-click="startCreating()'">
+					<button type="button" class="btn btn-link" ng-click="startCreating()">
 						<span class="gyphicon gyphicon-plus"></span>
 						Create bookmark
 					</button>
-					<div>
+					<div ng-if="isCreating">
 						Create a bookmark!
-					<button type="button" class="btn btn-link" ng-click="cancelCreating()'">Cancel</button>
+						<button type="button" class="btn btn-link" ng-click="cancelCreating()">Cancel</button>
 					</div>
 				</div>
 
 				<!-- editing -->
 
 				<div ng-show="shouldShowEditing()">
-					Edit a bookmark
-				<button type="button" class="btn btn-link" ng-click="cancelEditing()'">Editing</button>
+					<div ng-if="isEditing">
+						Edit a bookmark!
+						<button type="button" class="btn btn-link" ng-click="cancelEditing()">Cancel</button>
+					</div>
 				</div>
 		</div>
 	</div>
