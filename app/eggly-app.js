@@ -58,4 +58,12 @@ angular.module('Eggly', [])
 		$scope.isEditing = false;
 	}
 
+	$scope.shouldShowCreating = function() {
+		return $scope.currentCategory && !$scope.isEditing;
+	}
+
+	$scope.shouldShowEditing = function() {
+		return $scope.isEditing && !$scope.isCreating;
+	}
+
 });
