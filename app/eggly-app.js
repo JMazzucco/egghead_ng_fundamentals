@@ -28,4 +28,30 @@ angular.module('Eggly', [])
 		$scope.currentCategory = category;
 	};
 
+
+	$scope.isCurrentCategory = function(category){
+		return $scope.currentCategory !== null && category.name === $scope.currentCategory.name;
+	};
+
+	// ------------------------------------------------------
+	// CREATING AND EDITING STATES
+	// ------------------------------------------------------
+
+	$scope.isCreating = false;
+	$scope.isEditing = false;
+
+	function startCreating() {
+		$scope.isCreating = true;
+		$scope.isEditing = false;
+	}
+
+	function cancelCreating() {
+		$scope.isCreating = false;
+	}
+
+	function startEditing() {
+		$scope.isCreating = false;
+		$scope.isEditing = true;
+	}
+
 });
