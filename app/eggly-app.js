@@ -26,6 +26,9 @@ angular.module('Eggly', [])
 
 	$scope.setCurrentCategory = function(category){
 		$scope.currentCategory = category;
+
+		$scope.cancelEditing();
+		$scope.cancelCreating();
 	};
 
 
