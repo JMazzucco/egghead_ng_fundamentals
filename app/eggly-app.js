@@ -40,18 +40,22 @@ angular.module('Eggly', [])
 	$scope.isCreating = false;
 	$scope.isEditing = false;
 
-	function startCreating() {
+	$scope.startCreating = function() {
 		$scope.isCreating = true;
 		$scope.isEditing = false;
 	}
 
-	function cancelCreating() {
+	$scope.cancelCreating = function() {
 		$scope.isCreating = false;
 	}
 
-	function startEditing() {
+	$scope.startEditing = function() {
 		$scope.isCreating = false;
 		$scope.isEditing = true;
+	}
+
+	$scope.cancelEditing = function() {
+		$scope.isEditing = false;
 	}
 
 });
