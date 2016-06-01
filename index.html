@@ -18,7 +18,7 @@
 			<div class="col-sm-3 col-md-3 sidebar">
 
 				<ul class="nav nav-sidebar">
-					<li ng-repeat="category in categories">
+					<li ng-repeat="category in categories" ng-class="{'active':isCurrentCategory(category)}">
 						<a href="#" ng-click="setCurrentCategory(category)">{{category.name}}</a>
 					</li>
 				</ul>
@@ -35,6 +35,8 @@
 				<div>
 					<button type="button" class="close">&times;</button>
 				</div>
+
+				<div></div>
 		</div>
 	</div>
 
