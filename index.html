@@ -56,6 +56,7 @@
 				<!-- editing -->
 
 				<div ng-show="shouldShowEditing()">
+				<h4>Editing: {{editedBookmark.title}}</h4>
 					<form class="edit-form" ng-show="isEditing" role="form" ng-submit="updateBookmark(editedBookmark)" novalidate>
 							<div class="form-group">
 								<label for="editedBookmarkTitle">Bookmark Title</label>
