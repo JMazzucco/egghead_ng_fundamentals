@@ -43,10 +43,14 @@
 						<span class="gyphicon gyphicon-plus"></span>
 						Create bookmark
 					</button>
-					<div ng-if="isCreating">
-						Create a bookmark!
+					<form class="create-form" ng-show="isCreating" role="form" ng-submit="createBookmark(newBookmark)" novalidate>
+							<div class="form-group">
+								<label for="newBookmarkTitle">Bookmark Title</label>
+								<input type="text" class="form-control" id="newBookmarkTitle" ng-model="newBookmark.title" placeholder="Enter Title"/>
+							</div>
+						<button type="submit" class="btn btn-info btn-lg">Create</button>
 						<button type="button" class="btn btn-link" ng-click="cancelCreating()">Cancel</button>
-					</div>
+					</form>
 				</div>
 
 				<!-- editing -->
