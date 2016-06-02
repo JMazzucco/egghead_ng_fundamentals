@@ -36,6 +36,35 @@ angular.module('Eggly', [])
 		return $scope.currentCategory !== null && category.name === $scope.currentCategory.name;
 	};
 
+	$scope.editedBookmark = null;
+
+	$scope.setEditedBookmark = function(bookmark) {
+		$scope.editedBookmark = angular.copy(bookmark);
+	}
+
+	$scope.updateBookmark = function(bookmark) {
+	  // bookmark.category = $scope.currentCategory.name;
+
+		var index = _.findIndex($scope.bookmarks, function(b){
+			return b.id == bookmark.id;
+
+		});
+
+		$scope.bookmarks[index] = bookmark;
+		$scope.editedBookmark = null;
+		$scope.isEditing = false;
+
+	}
+
+	$scope.isSelectedBookmark = function(bookmarkId) {
+ 		console.log(bookmarkId);
+		if ( $scope.editedBookmark !== null && $scope.editedBookmark.id === bookmarkId) {
+			return true;
+		}
+	}
+
+
+
 	// ------------------------------------------------------
 	// CREATING AND EDITING STATES
 	// ------------------------------------------------------
@@ -86,8 +115,9 @@ angular.module('Eggly', [])
 			bookmark.category = $scope.currentCategory.name;
 			bookmark.id = $scope.bookmarks.length;
 			$scope.bookmarks.push(bookmark);
-			console.log($scope.bookmarks);
 			// resetCreateForm();
 	}
+
+
 
 });
