@@ -56,10 +56,14 @@
 				<!-- editing -->
 
 				<div ng-show="shouldShowEditing()">
-					<div ng-if="isEditing">
-						Edit a bookmark!
+					<form class="edit-form" ng-show="isEditing" role="form" ng-submit="updateBookmark(editedBookmark)" novalidate>
+							<div class="form-group">
+								<label for="editedBookmarkTitle">Bookmark Title</label>
+								<input type="text" class="form-control" id="editedBookmarkTitle" ng-model="editedBookmark.title" placeholder="Enter Title"/>
+							</div>
+						<button type="submit" class="btn btn-info btn-lg">Edit</button>
 						<button type="button" class="btn btn-link" ng-click="cancelEditing()">Cancel</button>
-					</div>
+					</form>
 				</div>
 		</div>
 	</div>
