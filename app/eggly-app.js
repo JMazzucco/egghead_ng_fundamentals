@@ -63,7 +63,9 @@ angular.module('Eggly', [])
 		}
 	}
 
+	$scope.deleteBookmark = function(bookmark) {
 
+	}
 
 	// ------------------------------------------------------
 	// CREATING AND EDITING STATES
