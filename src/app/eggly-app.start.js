@@ -1,4 +1,5 @@
 angular.module('Eggly', [
+    'ui.router',
     'categories',
     'categories.bookmarks'
 ])
