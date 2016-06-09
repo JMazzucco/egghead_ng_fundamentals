@@ -3,6 +3,17 @@ angular.module('Eggly', [
     'categories',
     'categories.bookmarks'
 ])
+    .config(function($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+            .state('eggly', {
+                url: '/',
+                templateUrl: 'app/categories/categories.html'
+            });
+    })
+
     .controller('MainCtrl', function () {
         var main = this;
         main.categories = [
