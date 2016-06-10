@@ -12,18 +12,14 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
 </head>
-<body ng-controller="MainCtrl">
-    <div class="container-fluid">
+<body ng-controller="MainCtrl as main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar" ui-view="categories"></div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view="bookmarks"></div>
+            </div>
+        </div>
 
-	    <div class="row">
-
-				<div class="col-sm-3 col-md-2 sidebar" ui-view="categories"></div>
-
-				<div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-1 main" ui-view="bookmarks"></div>
-
-			</div>
-
-  	</div>
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
@@ -33,7 +29,6 @@
 
 	<script type="text/javascript" src="app/eggly-app.js"></script>
 	<script type="text/javascript" src="app/categories/categories.js"></script>
-<!-- 	<script type="text/javascript" src="app/categories/categories.js"></script> -->
 	<script type="text/javascript" src="app/categories/bookmarks/bookmarks.js"></script>
 	<script type="text/javascript" src="app/categories/bookmarks/create/bookmark-create.js"></script>
 	<script type="text/javascript" src="app/categories/bookmarks/edit/bookmark-edit.js"></script>
