@@ -5,13 +5,15 @@ angular.module('Eggly', [
 ])
     .config(function($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/');
+
 
         $stateProvider
             .state('eggly', {
                 url: '/',
-                templateUrl: 'app/categories/categories.html'
+                abstract: true
             });
+
+        $urlRouterProvider.otherwise('/');
     })
 
     .controller('MainCtrl', function () {
