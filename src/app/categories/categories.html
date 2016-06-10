@@ -10,47 +10,6 @@
 		<div class="row">
 
 
-			<div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-1 main">
+			<div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-1 main"></div>
 
-				<div ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}" ng-class="{'active':isSelectedBookmark(bookmark.id)}">
-
-					<button ng-click="deleteBookmark(bookmark)" type="button" class="close">&times;</button>
-					<button ng-click="setEditedBookmark(bookmark);startEditing()" type="button" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></button>
-					<a href="#">{{bookmark.title}}</a>
-				</div>
-				<div>
-					<button  type="button" class="close">&times;</button>
-				</div>
-
-
-				<!-- Creating -->
-				<div ng-show="shouldShowCreating()">
-					<button type="button" class="btn btn-link" ng-click="startCreating()">
-						<span class="gyphicon gyphicon-plus"></span>
-						Create bookmark
-					</button>
-
-					<form class="create-form" ng-show="isCreating" role="form" ng-submit="createBookmark(newBookmark)" novalidate>
-							<div class="form-group">
-								<label for="newBookmarkTitle">Bookmark Title</label>
-								<input type="text" class="form-control" id="newBookmarkTitle" ng-model="newBookmark.title" placeholder="Enter Title"/>
-							</div>
-						<button type="submit" class="btn btn-info btn-lg">Create</button>
-						<button type="button" class="btn btn-link" ng-click="cancelCreating()">Cancel</button>
-					</form>
-				</div>
-
-				<!-- editing -->
-
-				<div ng-show="shouldShowEditing()">
-				<h4>Editing: {{editedBookmark.title}}</h4>
-					<form class="edit-form" ng-show="isEditing" role="form" ng-submit="updateBookmark(editedBookmark)" novalidate>
-							<div class="form-group">
-								<label for="editedBookmarkTitle">Bookmark Title</label>
-								<input type="text" class="form-control" id="editedBookmarkTitle" ng-model="editedBookmark.title" placeholder="Enter Title"/>
-							</div>
-						<button type="submit" class="btn btn-info btn-lg">Edit</button>
-						<button type="button" class="btn btn-link" ng-click="cancelEditing()">Cancel</button>
-					</form>
-				</div>
 		</div>
