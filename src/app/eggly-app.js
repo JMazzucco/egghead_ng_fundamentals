@@ -47,6 +47,8 @@ angular.module('Eggly', [
         function setCurrentCategory(category) {
             main.currentCategory = category;
 
+            // $state.go('eggly.categories.bookmarks', {category:category.name});
+
             cancelCreating();
             cancelEditing();
         }
