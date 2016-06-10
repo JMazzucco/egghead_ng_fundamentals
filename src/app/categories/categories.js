@@ -16,11 +16,9 @@ angular.module('categories', [
                     }
                 }
             })
+        ;
     })
-    .controller('CategoriesCtrl', function CategoriesCtrl(){
-
-    })
-    .controller('BookmarksCtrl', function BookmarksCtrl() {
+    .controller('CategoriesCtrl', function CategoriesCtrl($scope){
 
     })
 ;
